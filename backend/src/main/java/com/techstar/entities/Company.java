@@ -3,14 +3,13 @@ package com.techstar.entities;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
-
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "tb_company")
@@ -21,14 +20,14 @@ public class Company implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+	@Column(nullable = false)
 	private String name;
 	
-	@NotNull
+	@Column(nullable = false)
 	private String location;
 	
-	@NotNull
 	@Lob
+	@Column(nullable = false)
 	private String description;
 	
 	private LocalDate foundedDate;
