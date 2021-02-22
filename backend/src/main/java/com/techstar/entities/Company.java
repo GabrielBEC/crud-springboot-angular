@@ -1,11 +1,13 @@
 package com.techstar.entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
@@ -21,20 +23,26 @@ public class Company implements Serializable{
 	
 	@NotNull
 	private String name;
+	
 	@NotNull
 	private String location;
+	
 	@NotNull
+	@Lob
 	private String description;
+	
+	private LocalDate foundedDate;
 	
 	public Company() {
 	}
 
-	public Company(Long id, String name, String location, String description) {
+	public Company(Long id, String name, String location, String description, LocalDate foundedDate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.location = location;
 		this.description = description;
+		this.foundedDate = foundedDate;
 	}
 
 	public Long getId() {
@@ -69,6 +77,14 @@ public class Company implements Serializable{
 		this.description = description;
 	}
 
+	public LocalDate getFoundedDate() {
+		return foundedDate;
+	}
+
+	public void setFoundedDate(LocalDate foundedDate) {
+		this.foundedDate = foundedDate;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
