@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.techstar.entities.Founder;
 import com.techstar.repositories.FounderRepository;
+import com.techstar.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class FounderService {
@@ -21,7 +22,7 @@ public class FounderService {
 	
 	public Founder findById(Long id) {
 		Optional<Founder> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public Founder insert(Founder obj) {
