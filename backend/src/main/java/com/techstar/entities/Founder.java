@@ -6,7 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_founder")
@@ -19,6 +23,11 @@ public class Founder implements Serializable{
 	private Long id;
 	private String fullName;
 	private String title;
+	
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "company_id")
+	private Company company;
 	
 	public Founder() {
 	}
@@ -52,6 +61,14 @@ public class Founder implements Serializable{
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
 	}
 
 	@Override
