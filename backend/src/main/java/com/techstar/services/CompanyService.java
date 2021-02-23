@@ -31,4 +31,17 @@ public class CompanyService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	public Company update(Long id, Company obj) {
+		Company entity = repository.getOne(id);
+		updateData(entity, obj);
+		return repository.save(entity);		
+	}
+	
+	public void updateData(Company entity, Company obj) {
+		entity.setName(obj.getName());
+		entity.setLocation(obj.getLocation());
+		entity.setDescription(obj.getDescription());
+		entity.setFoundedDate(obj.getFoundedDate());
+	}
 }

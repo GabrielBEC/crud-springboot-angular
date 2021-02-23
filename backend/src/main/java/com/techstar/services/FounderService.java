@@ -24,4 +24,8 @@ public class FounderService {
 		return obj.get();
 	}
 	
+	public Founder insert(Founder obj) {
+		return repository.save(obj);
+	}
+	
 }
