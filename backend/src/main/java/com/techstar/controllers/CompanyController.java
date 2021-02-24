@@ -17,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.techstar.entities.Company;
 import com.techstar.services.CompanyService;
+import com.techstar.services.FounderService;
 
 @RestController
 @RequestMapping("/companies")
@@ -24,6 +25,9 @@ public class CompanyController {
 
 	@Autowired
 	private CompanyService service;
+	
+	@Autowired
+	private FounderService founderService;
 
 	@GetMapping
 	public ResponseEntity<List<Company>> findAll(){		
@@ -48,6 +52,10 @@ public class CompanyController {
 	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id){
+		Company comp = service.findById(id);
+		comp.getFounders().forEach(f -> {
+			founderService.delete(f.getId());
+		});
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
