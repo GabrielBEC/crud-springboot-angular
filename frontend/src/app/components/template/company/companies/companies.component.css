@@ -1,0 +1,32 @@
+.card{
+    min-height: 150px;
+    margin-top: 20px;
+}
+
+.titulo-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.titulo-card span{
+    padding-left: 10px;
+    margin-left: 5px;
+    border-left: 2px solid black;
+}
+.footer{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+@media(max-width: 500px){
+    .titulo-card{
+        display: flex;
+        flex-direction: column;
+    }
+    .titulo-card span{
+        border: 0;
+        padding: 0;
+    }
+}

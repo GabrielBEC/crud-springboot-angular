@@ -1,0 +1,33 @@
+<main>
+    <form action="" class="formulario container">
+        <fieldset>
+            <legend class="leg">Crie uma nova empresa</legend>
+
+            <div class="form-group">
+                <label for="">Nome da Empresa</label>
+                <input type="text" name="nomeEmpresa" class="form-control" required>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Cidade</label>
+                    <input type="text" name="cidade" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label for="">Estado</label>
+                    <input type="text" name="estado" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label for="">Fundação</label>
+                    <input type="date" name="data" class="form-control">
+                </div>
+            </div>
+            <div class="desc form-group">
+                <label for="desc">Descrição</label>
+                <textarea class="form-control" name="desc" id="desc" rows="8" required></textarea>
+            </div>
+            <footer class="footer">
+                <button class="btn btn-dark" type="submit">Salvar</button>
+            </footer>
+        </fieldset>
+    </form>
+</main>

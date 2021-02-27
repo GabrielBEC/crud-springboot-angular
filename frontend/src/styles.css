@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+main h1{
+    text-align: center;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dados{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dados button{
+    width: 90px;
+}
+
+.fundador{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.fundador section div{
+    margin-right: 20px;
+}
+.fundador button{
+    width: 200px;
+    align-self: center;
+}
+
+@media(max-width: 500px){
+    .dados{
+        display: flex;
+        flex-direction: column;
+    }
+    .dados .buttons{
+        margin-top: 10px;
+    }
+    
+    .fundador{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .fundador section{
+        display: flex;
+        flex-direction: column;
+    }
+    .fundador section div{
+        width: 100%;
+        text-align: center;
+    }
+    .fundador button{
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
+
+.footer{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

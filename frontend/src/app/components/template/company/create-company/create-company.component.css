@@ -1,0 +1,21 @@
+.formulario{
+    margin-top: 20px;
+}
+.desc{
+    margin-top: 10px;
+}
+
+textarea{
+    resize: none;
+}
+
+@media(max-width: 500px){
+    .leg{
+        text-align: center;
+    }
+    .formulario .row{
+        display: flex;
+        align-items: flex-end;
+        font-size: 0.9rem;
+    }
+}
