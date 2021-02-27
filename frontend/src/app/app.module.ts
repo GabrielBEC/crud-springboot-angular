@@ -8,6 +8,7 @@ import { CompaniesComponent } from './components/template/company/companies/comp
 import { CompanyComponent } from './components/template/company/company/company.component';
 import { CreateCompanyComponent } from './components/template/company/create-company/create-company.component';
 import { CreateFounderComponent } from './components/template/founder/create-founder/create-founder.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreateFounderComponent } from './components/template/founder/create-fou
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

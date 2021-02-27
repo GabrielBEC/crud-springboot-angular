@@ -1,38 +1,14 @@
 <main class="principal">
-    <section class="container">
+    <section class="container" *ngFor="let company of companies">
         <article class="card">
             <div class="card-body">
                 <div class="titulo-card">
-                    <h3 class="card-title">Titulo grande para testes</h3>
-                    <span>Cidade, Estado</span>
+                    <h3 class="card-title"> {{company.name}} </h3>
+                    <span> {{company.location}} </span>
                     <a routerLink="/company">Leia mais</a>
                 </div>
                 <p class="p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi earum veniam obcaecati corrupti? Animi ratione quis saepe nisi, recusandae ipsam adipisci voluptas nulla ipsa pariatur totam, iure sint, repellendus assumenda.
-                </p>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-body">
-                <div class="titulo-card">
-                    <h3 class="card-title">Titulo grande para testes</h3>
-                    <span>Cidade, Estado</span>
-                    <a href="">Leia mais</a>
-                </div>
-                <p class="p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi earum veniam obcaecati corrupti? Animi ratione quis saepe nisi, recusandae ipsam adipisci voluptas nulla ipsa pariatur totam, iure sint, repellendus assumenda.
-                </p>
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-body">
-                <div class="titulo-card">
-                    <h3 class="card-title">Titulo grande para testes</h3>
-                    <span>Cidade, Estado</span>
-                    <a href="">Leia mais</a>
-                </div>
-                <p class="p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi earum veniam obcaecati corrupti? Animi ratione quis saepe nisi, recusandae ipsam adipisci voluptas nulla ipsa pariatur totam, iure sint, repellendus assumenda.
+                {{company.description}}
                 </p>
             </div>
         </article>
