@@ -15,4 +15,9 @@ export class CompanyService {
   read(): Observable<Company[]>{
     return this.http.get<Company[]>(this.baseUrl)
   }
+
+  readById(id: string): Observable<Company>{
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Company>(url)
+  }
 }

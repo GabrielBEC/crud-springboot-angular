@@ -5,7 +5,7 @@
                 <div class="titulo-card">
                     <h3 class="card-title"> {{company.name}} </h3>
                     <span> {{company.location}} </span>
-                    <a routerLink="/company">Leia mais</a>
+                    <a routerLink="/company/{{company.id}}">Leia mais</a>
                 </div>
                 <p class="p-2">
                 {{company.description}}
@@ -14,7 +14,7 @@
         </article>
     </section>
     <footer class="footer container fixed-bottom">
-        <a routerLink="/company/create">
+        <a routerLink="/create/company">
             <button class="btn btn-dark">Adicionar Empresa</button>
         </a>
     </footer>

@@ -1,27 +1,23 @@
 <main class="details container">
     <h1>
-        Titulo grande para testes
+        {{ company.name }}
     </h1>
     <section class="dados">
-        <span>mes dia, ano</span>
-        <span>Cidade, Estado</span>
+        <span>fundado em: {{company.foundedDate}}</span>
+        <span>{{ company.location }}</span>
         <div class="buttons">
             <button class="btn btn-dark">Editar</button>
             <button class="btn btn-dark">Deletar</button>
         </div>
     </section>
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem enim deleniti adipisci possimus, nihil recusandae ea placeat quia incidunt exercitationem voluptatum reprehenderit magnam modi maiores sed architecto odit culpa necessitatibus.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus corporis facilis delectus corrupti architecto, mollitia molestiae recusandae error, voluptatem sint quam. A inventore veritatis laborum dolorum voluptas ab at id?
+        {{ company.description }}
     </p>
     <fieldset class="fundador">
         <legend>Fundadores</legend>
-        <section class="row">
+        <section class="row" *ngFor="let founder of company.founders">
             <div>
-                <span>Nome fundador: </span><span>Cargo</span>
-            </div>
-            <div>
-                <span>Nome fundador: </span><span>Cargo</span>
+                <span> {{founder.fullName}} </span> - <span> {{founder.title}} </span>
             </div>
         </section>
         <a routerLink="/founder/create">
