@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Company } from 'src/app/models/company.model';
+import { CompanyService } from 'src/app/services/company.service';
 
 @Component({
   selector: 'app-create-company',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCompanyComponent implements OnInit {
 
-  constructor() { }
+  state: string = ''
+  city: string = ''
+
+  company: Company = {
+    name: '',
+    description: '',
+    location: '',
+    foundedDate: '',
+  }
+
+  constructor(private companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  createCompany(): void{
+    this.company.location = this.city + ', '+ this.state
+    this.companyService.create(this.company).subscribe(() => {
+      this.router.navigate(['/'])
+    })
+  }
+
+  location(city: string, state: string): string{
+    return city +', '+state
   }
 
 }

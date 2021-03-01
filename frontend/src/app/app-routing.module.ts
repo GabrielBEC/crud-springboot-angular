@@ -19,7 +19,7 @@ const routes: Routes = [
     component: CreateCompanyComponent
   },
   {
-    path: "founder/create",
+    path: "create/founder/:id",
     component: CreateFounderComponent
   }
 ];

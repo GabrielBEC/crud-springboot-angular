@@ -6,5 +6,5 @@ export interface Company{
     location: string
     description: string
     foundedDate: string
-    founders: Founder
+    founders?: Founder
 }

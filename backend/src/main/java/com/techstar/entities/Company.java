@@ -13,6 +13,8 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "tb_company")
 public class Company implements Serializable{
@@ -32,6 +34,7 @@ public class Company implements Serializable{
 	@Column(nullable = false)
 	private String description;
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	private LocalDate foundedDate;
 	
 	@OneToMany(mappedBy = "company")

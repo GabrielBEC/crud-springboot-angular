@@ -20,4 +20,8 @@ export class CompanyService {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Company>(url)
   }
+
+  create(company: Company): Observable<Company>{
+    return this.http.post<Company>(this.baseUrl, company)
+  }
 }
