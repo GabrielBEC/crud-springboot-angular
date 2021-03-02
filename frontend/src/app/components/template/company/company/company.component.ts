@@ -12,13 +12,23 @@ export class CompanyComponent implements OnInit {
 
   company: Company
 
+  id = this.route.snapshot.paramMap.get('id')
+  
   constructor(private companyService: CompanyService, private router: Router, private route: ActivatedRoute) { }
-
+  
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')
-    this.companyService.readById(id).subscribe(company => {
+    this.companyService.readById(this.id).subscribe(company => {
       this.company = company
     })
   }
 
+  deleteCompany(){
+    const question = confirm("Deseja deletar o/a "+this.company.name)
+    if(question == true){
+      this.companyService.delete(this.id).subscribe(() => {
+        const resp = alert(this.company.name+" deletado com sucesso!")
+        this.router.navigate(["/"])
+      })
+    }
+  }
 }

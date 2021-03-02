@@ -24,4 +24,9 @@ export class CompanyService {
   create(company: Company): Observable<Company>{
     return this.http.post<Company>(this.baseUrl, company)
   }
+
+  delete(id: string): Observable<Company>{
+    const url = `${this.baseUrl}/${id}`
+    return this.http.delete<Company>(url)
+  }
 }
