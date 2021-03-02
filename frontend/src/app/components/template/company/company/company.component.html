@@ -6,7 +6,7 @@
         <span>fundado em: {{company.foundedDate}}</span>
         <span>{{ company.location }}</span>
         <div class="buttons">
-            <button class="btn btn-dark">Editar</button>
+            <button class="btn btn-dark" routerLink="/update/company/{{company.id}}" >Editar</button>
             <button class="btn btn-dark" (click)="deleteCompany()">Deletar</button>
         </div>
     </section>

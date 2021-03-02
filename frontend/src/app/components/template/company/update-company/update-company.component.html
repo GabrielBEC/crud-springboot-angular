@@ -1,0 +1,33 @@
+<main>
+    <form class="formulario container">
+        <fieldset>
+            <legend class="leg">Atualizar empresa</legend>
+
+            <div class="form-group">
+                <label for="">Nome da Empresa</label>
+                <input type="text" name="nomeEmpresa" [(ngModel)]="company.name" class="form-control" required>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Cidade</label>
+                    <input type="text" name="cidade" [(ngModel)]="city" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label for="">Estado</label>
+                    <input type="text" name="estado" [(ngModel)]="state" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label for="">Fundação</label>
+                    <input type="date" name="data" [(ngModel)]="company.foundedDate" class="form-control">
+                </div>
+            </div>
+            <div class="desc form-group">
+                <label for="desc">Descrição</label>
+                <textarea class="form-control" [(ngModel)]="company.description" name="desc" id="desc" rows="8" required></textarea>
+            </div>
+            <footer class="footer">
+                <button class="btn btn-dark" (click)="updateCompany()">Atualizar</button>
+            </footer>
+        </fieldset>
+    </form>
+</main>

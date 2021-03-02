@@ -9,7 +9,8 @@ import { CompanyComponent } from './components/template/company/company/company.
 import { CreateCompanyComponent } from './components/template/company/create-company/create-company.component';
 import { CreateFounderComponent } from './components/template/founder/create-founder/create-founder.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { UpdateCompanyComponent } from './components/template/company/update-company/update-company.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule} from '@angular/forms'
     CompaniesComponent,
     CompanyComponent,
     CreateCompanyComponent,
-    CreateFounderComponent
+    CreateFounderComponent,
+    UpdateCompanyComponent
   ],
   imports: [
     FormsModule,

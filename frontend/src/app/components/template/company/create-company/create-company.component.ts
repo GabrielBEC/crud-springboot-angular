@@ -26,7 +26,7 @@ export class CreateCompanyComponent implements OnInit {
   }
 
   createCompany(): void{
-    this.company.location = this.city + ', '+ this.state
+    this.company.location = this.location(this.city, this.state)
     this.companyService.create(this.company).subscribe(() => {
       this.router.navigate(['/'])
     })
