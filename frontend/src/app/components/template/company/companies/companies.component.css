@@ -4,16 +4,22 @@
 }
 
 .titulo-card{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
+
 .titulo-card span{
     padding-left: 10px;
     margin-left: 5px;
     border-left: 2px solid black;
 }
+
+.titulo-card div{
+    text-align: right;
+}
+
 .footer{
     display: flex;
     justify-content: flex-end;

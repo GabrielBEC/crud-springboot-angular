@@ -5,7 +5,9 @@
                 <div class="titulo-card">
                     <h3 class="card-title"> {{company.name}} </h3>
                     <span> {{company.location}} </span>
-                    <a routerLink="/company/{{company.id}}">Leia mais</a>
+                    <div>
+                        <a routerLink="/company/{{company.id}}">Leia mais</a>                        
+                    </div>
                 </div>
                 <p class="p-2">
                 {{company.description}}
