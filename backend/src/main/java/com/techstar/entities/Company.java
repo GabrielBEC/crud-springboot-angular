@@ -9,9 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -30,7 +31,7 @@ public class Company implements Serializable{
 	@Column(nullable = false)
 	private String location;
 	
-	@Lob
+	@Type(type = "text")
 	@Column(nullable = false)
 	private String description;
 	
