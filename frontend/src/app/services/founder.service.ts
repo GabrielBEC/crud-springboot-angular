@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Founder } from '../models/founder.model';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class FounderService {
 
-  baseUrl = "http://localhost:8080/founders"
+  base = environment.apiUrl
+  baseUrl = `${this.base}/founders`
 
   constructor(private http: HttpClient) { }
 
