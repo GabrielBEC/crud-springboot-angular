@@ -11,6 +11,12 @@ O objetivo desta aplicação é ser um diretório de empresas e seus fundadores.
 * Java
 * SpringBoot
 * JPA / Hibernate
+* Postgresql
+
+### Frontend
+
+* Html, css, javascript
+* Angular
 
 
 
@@ -24,4 +30,14 @@ git clone https://github.com/GabrielBEC/crud-springboot-angular
 cd backend
 
 ./mvnw spring-boot:run
+```
+
+### Frontend
+
+```bash
+# Na pasta frontend execute os comandos
+
+npm install
+
+ng serve
 ```
